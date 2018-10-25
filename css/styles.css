@@ -1,0 +1,169 @@
+body {
+    margin: 0px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+nav {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 74px;
+    padding: 16px 0px 16px 0px;
+    width: 100%;
+    transition: background-color 0.3s,height 0.2s;
+}
+nav.reduced {
+    height: 58px;
+    padding: 0;
+    background: white;
+    box-shadow: 12px 1px 6px 0px #8a8888;
+}
+nav.reduced .logo {
+    height: 90%;
+}
+nav.reduced .tabs .nav-link.active {
+    color: #efe2d3;
+}
+nav .logo {
+    height: 100%;
+}
+nav .tabs {
+    display: flex;
+    margin-right: 128px;
+}
+nav .tabs a {
+    margin-left: 24px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #666;
+}
+nav .tabs .nav-link {
+    padding: 0px;
+}
+nav .tabs .nav-link.active {
+    color: white;
+}
+#home {
+    display: flex;
+    height: 100vh;
+    background: #efe2d3;
+}
+#home .home-section {
+    width: 50%;
+    height: 100%;
+}
+#home .home-content-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#home .home-content-container div {
+    padding: 0px 64px 0px 64px;
+    text-align: center;
+}
+#home .home-content-container div img {
+    height: 240px;
+}
+#home .home-content-container div h1 {
+    font-size: 48px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+#home .home-content-container div p {
+    color: #a59393;
+    letter-spacing: 0.5px;
+    text-align: left;
+    margin-bottom: 24px;
+}
+#home .home-content-container div a {
+    display: inline-block;
+    color: initial;
+    padding: 16px;
+    font-size: 16px;
+    background: none;
+    border: 2px solid black;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+#home .home-content-container div a:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #a59393;
+    border-color: #a59393;
+}
+#home .home-content-container div a:focus {
+    outline: none;
+}
+#home .image {
+    background-image: url("../images/home_image.jpg");
+    background-size: cover;
+}
+#home .text {
+
+}
+#home .text h1 {
+
+}
+
+#profile-skills-container {
+    width: 100%;
+    display: flex;
+}
+#profile-skills-container .profile {
+    width: 50%;
+    background: white;
+    padding: 48px 64px 48px 64px;
+}
+#profile-skills-container .profile h2 {
+    margin-bottom: 0px;
+}
+#profile-skills-container .profile .subtitle {
+    font-size: 12px;
+    color: #dcb88e;
+    font-style: italic;
+}
+#profile-skills-container .profile .description {
+    font-size: 16px;
+    color: #565656;
+    word-spacing: 5px;
+}
+#profile-skills-container .skills {
+    padding: 48px 64px 48px 64px;
+    width: 50%;
+    background: #ecc18f;
+}
+#profile-skills-container .skills h2{
+    color: white;
+}
+#experience {
+    height: 400px;
+    width: 100%;
+    background-color: green;
+}
+#projects {
+    height: 400px;
+    width: 100%;
+    background-color: blue;
+}
+#testimonial {
+    height: 400px;
+    width: 100%;
+    background-color: red;
+}
+#contributions-contact-container {
+     height: 400px;
+     width: 100%;
+     background-color: darkgrey;
+ }
+#footer {
+    height: 400px;
+    width: 100%;
+    background-color: green;
+}
