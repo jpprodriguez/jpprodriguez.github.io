@@ -185,6 +185,7 @@ nav .tabs .nav-link.active {
 }
 #experience .timeline-container {
     display: flex;
+    justify-content: space-between;
     margin-top: 24px;
 }
 #experience .timeline-container .card-container {
@@ -241,7 +242,7 @@ nav .tabs .nav-link.active {
 }
 
 #experience .timeline-container .separator {
-    width: 100px;
+    width: 200px;
     height: 0px;
     margin: 1px;
     border-top: 2px dashed;
