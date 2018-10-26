@@ -177,8 +177,78 @@ nav .tabs .nav-link.active {
 #experience {
     height: 400px;
     width: 100%;
-    background-color: green;
+    background-color: #4a515f;
+    padding: 48px 64px 48px 64px;
 }
+#experience h2 {
+    color: white;
+}
+#experience .timeline-container {
+    display: flex;
+    margin-top: 24px;
+}
+#experience .timeline-container .card-container {
+    width: 300px;
+    height: 178px;
+}
+#experience .timeline-container .card-container .card {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background: #616a7b;
+    border-radius: 10px;
+}
+#experience .timeline-container .card-container .timeline {
+    width: 95%;
+    margin: auto;
+    border: 1px solid;
+    position: relative;
+    top: 30px;
+}
+#experience .timeline-container .card-container .timeline .first {
+    position: absolute;
+    left: -10px;
+    top: 10px;
+}
+#experience .timeline-container .card-container .timeline .last {
+    position: absolute;
+    right: -10px;
+    top: 10px;
+}
+
+#experience .timeline-container .card-container .timeline::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: -9px;
+    background-color: white;
+    border: 2px solid #b5bccc;
+    top: -7px;
+    border-radius: 50%;
+}
+
+#experience .timeline-container .card-container .timeline::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: -9px;
+    background-color: white;
+    border: 2px solid #b5bccc;
+    top: -7px;
+    border-radius: 50%;
+}
+
+#experience .timeline-container .separator {
+    width: 100px;
+    height: 0px;
+    margin: 1px;
+    border-top: 2px dashed;
+    position: relative;
+    top: 207px;
+}
+
 #projects {
     height: 400px;
     width: 100%;
