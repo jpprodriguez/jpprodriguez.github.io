@@ -1,3 +1,9 @@
+@keyframes chest-color {
+    0% {background-color: #003958;}
+    50% {background-color: #41a6de;}
+    100% {background-color: #003958;}
+  }
+
 body {
     margin: 0px;
     font-family: 'Source Sans Pro', sans-serif;
@@ -103,8 +109,11 @@ nav .tabs .nav-link.active {
     outline: none;
 }
 #home .image {
-    background-image: url("../images/home_image.jpg");
+    background-image: url("../images/home_image_2.png");
     background-size: cover;
+    background-color: #003958;
+    -webkit-animation: chest-color; /* Safari 4.0 - 8.0 */
+    animation: chest-color 4s infinite;
 }
 
 #profile-skills-container {
@@ -352,6 +361,7 @@ nav .tabs .nav-link.active {
 }
 #footer {
     width: 100%;
+    padding: 8px 0px 8px 0px;
     background-color: #222c35;
     display: flex;
     justify-content: center;
