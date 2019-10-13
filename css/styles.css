@@ -74,7 +74,7 @@ nav .tabs .nav-link.active {
     text-align: left;
 }
 #home .home-content-container div p {
-    color: #a59393;
+    color: #36454f;
     letter-spacing: 0.5px;
     text-align: left;
     margin-bottom: 24px;
@@ -106,12 +106,6 @@ nav .tabs .nav-link.active {
     background-image: url("../images/home_image.jpg");
     background-size: cover;
 }
-#home .text {
-
-}
-#home .text h1 {
-
-}
 
 #profile-skills-container {
     width: 100%;
@@ -132,15 +126,13 @@ nav .tabs .nav-link.active {
 }
 #profile-skills-container .profile .description {
     font-size: 16px;
-    color: #565656;
+    color: #36454f;
     word-spacing: 5px;
 }
 #profile-skills-container .skills {
     padding: 48px 64px 48px 64px;
     width: 50%;
-    background: #ecc18f;
-}
-#profile-skills-container .skills h2{
+    background-color: #2C3A47;
     color: white;
 }
 #profile-skills-container .skills ul {
@@ -164,11 +156,11 @@ nav .tabs .nav-link.active {
     text-transform: uppercase;
     font-size: 18px;
     font-weight: 600;
-    color: #4a4a4a;
+    color: #f3f3f3;
     margin: 0px 8px 0px 0px;
 }
 #profile-skills-container .skills .title i {
-    color: #3c8bf3;
+    color: #f3e53c;
     font-size: 20px;
 }
 #profile-skills-container .skills .skills-content {
@@ -177,11 +169,8 @@ nav .tabs .nav-link.active {
 #experience {
     height: 400px;
     width: 100%;
-    background-color: #887157;
+    background: #efe2d3;
     padding: 48px 64px 48px 64px;
-}
-#experience h2 {
-    color: white;
 }
 #experience .timeline-container {
     display: flex;
@@ -206,19 +195,19 @@ nav .tabs .nav-link.active {
     border: 1px solid;
     position: relative;
     top: 30px;
-    color: #dadada;
+    color: #36454f;
 }
 #experience .timeline-container .card-container .timeline .first {
     position: absolute;
     left: -10px;
     top: 10px;
-    color: white;
+    color: #36454f;
 }
 #experience .timeline-container .card-container .timeline .last {
     position: absolute;
     right: -10px;
     top: 10px;
-    color: white;
+    color: #36454f;
 }
 
 #experience .timeline-container .card-container .timeline::before {
@@ -228,7 +217,7 @@ nav .tabs .nav-link.active {
     height: 15px;
     left: -9px;
     background-color: white;
-    border: 2px solid #b5bccc;
+    border: 2px solid #36454f;
     top: -7px;
     border-radius: 50%;
 }
@@ -240,7 +229,7 @@ nav .tabs .nav-link.active {
     height: 15px;
     right: -9px;
     background-color: white;
-    border: 2px solid #b5bccc;
+    border: 2px solid #36454f;
     top: -7px;
     border-radius: 50%;
 }
@@ -252,14 +241,16 @@ nav .tabs .nav-link.active {
     border-top: 2px dashed;
     position: relative;
     top: 207px;
-    color: #dadada;
+    color: #36454f;
 }
 
 #projects {
     width: 100%;
-    background-color: #efe2d3;
+    background-color: #2C3A47;
     padding: 48px 64px 48px 64px;
+    color: white;
 }
+
 #projects .projects-container{
     display: flex;
     flex-wrap: wrap;
@@ -310,7 +301,7 @@ nav .tabs .nav-link.active {
 #projects .project .company {
     font-size: 12px;
     font-style: italic;
-    color: #616a7a;
+    color: #bfbfbf;
     margin: 0px 0px 2px 4px;
 }
 #projects .project .description {
@@ -321,11 +312,8 @@ nav .tabs .nav-link.active {
 #testimonial {
     height: 550px;
     width: 100%;
-    background-color: #866642;
+    background: #efe2d3;
     padding: 48px 64px 48px 64px;
-}
-#testimonial h2 {
-    color: white;
 }
 #testimonial .carousel {
     height: calc(100% - 32px);
@@ -336,15 +324,41 @@ nav .tabs .nav-link.active {
 #testimonial .carousel-item {
     height: 100%;
 }
-#contributions-contact-container {
-     height: 400px;
-     width: 100%;
-     background-color: darkgrey;
- }
-#footer {
-    height: 400px;
+#contact {
     width: 100%;
-    background-color: green;
+    padding: 48px 64px 48px 64px;
+    background-color: #2C3A47;
+    color:white;
+ }
+#contact .contact-icon-container{
+    width: 60%;
+    margin: auto;
+    padding: 48px 0px 48px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#contact .contact-icon-container .contact-icon img {
+    width: 100px;
+    transition: opacity 0.3s;
+}
+#contact .contact-icon-container .contact-icon img:hover {
+    opacity: 0.7;
+}
+#contact .contact-icon-container .contact-icon p {
+    margin: 0;
+    font-size: 14px;
+    color: #bfbfbf;
+}
+#footer {
+    width: 100%;
+    background-color: #222c35;
+    display: flex;
+    justify-content: center;
+}
+#footer span {
+    margin: auto;
+    color:white;
 }
 
 
@@ -444,3 +458,18 @@ nav .tabs .nav-link.active {
   .box:hover .text {
     transform: rotateY(20deg) skewY(-3deg);
   }
+
+/* Carousel controls */
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2C3A47' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+   
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2C3A47' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+.carousel-indicators li {
+    background-color: #2c3a4763;
+}
+.carousel-indicators .active {
+    background-color: #2C3A47;
+}
