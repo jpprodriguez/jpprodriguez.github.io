@@ -2,13 +2,14 @@
     0% {background-color: #003958;}
     50% {background-color: #41a6de;}
     100% {background-color: #003958;}
-  }
+}
 
 body {
     margin: 0px;
     font-family: 'Source Sans Pro', sans-serif;
 }
 nav {
+    
     position: fixed;
     display: flex;
     align-items: center;
@@ -17,7 +18,7 @@ nav {
     padding: 16px 0px 16px 0px;
     width: 100%;
     transition: background-color 0.3s,height 0.2s;
-    z-index: 1;
+    z-index: 20;
 }
 nav.reduced {
     height: 58px;
@@ -30,6 +31,9 @@ nav.reduced .logo {
 }
 nav.reduced .tabs .nav-link.active {
     color: #efe2d3;
+}
+nav .navbar-button{
+    display: none;
 }
 nav .logo {
     height: 100%;
@@ -482,4 +486,65 @@ nav .tabs .nav-link.active {
 }
 .carousel-indicators .active {
     background-color: #2C3A47;
+}
+
+@media (max-width: 575px) {
+    nav {
+        height: 100%;
+        width: 50%;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 8px;
+        transition: width 0.2s;
+    }
+    nav.closed {
+        height: 60px;
+        width: 100%;
+        flex-direction: row;
+        position: fixed;
+        align-items: center;
+    }
+    nav .logo {
+        position: absolute;
+        top: 0;
+        left: calc(50% - 40px);
+    }
+    nav.opened .logo{
+        display: none;
+    }
+    nav.closed .logo{
+        display: block;
+    }
+    nav .navbar-button {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    nav .navbar-button .line {
+        width: 100%;
+        height: 15%;
+        background: black;
+        border-radius: 3px;
+    }
+    nav .tabs {
+        flex-direction: column;
+        margin: 24px 0 0 0 ;
+        height: 100vh;
+        justify-content: space-around;
+        
+    }
+    nav.closed .tabs {
+        display: none;
+    }
+    nav .tabs a {
+        font-size: 18px;
+    }
+    nav .tabs .nav-link.active {
+        color: #deac73;
+    }
 }
