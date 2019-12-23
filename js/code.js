@@ -1,6 +1,13 @@
 $(document).ready(function(){
     var scrollTop = 0;
     var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    if(viewportWidth > 575) {
+        $('#profile-skills-container .profile').attr('data-aos','fade-left');
+        $('#profile-skills-container .skills').attr('data-aos','fade-right');
+        $('#profile-skills-container .skills ul').each(function(){
+            $(this).attr('data-aos','zoom-out')
+        });
+    }
     $(window).scroll(function(){
         scrollTop = $(window).scrollTop();
         if (scrollTop >= 50 && viewportWidth > 575) {

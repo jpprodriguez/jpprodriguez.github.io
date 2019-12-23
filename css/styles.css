@@ -13,7 +13,6 @@ nav {
     position: fixed;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     height: 74px;
     padding: 16px 0px 16px 0px;
     width: 100%;
@@ -40,7 +39,6 @@ nav .logo {
 }
 nav .tabs {
     display: flex;
-    margin-right: 128px;
 }
 nav .tabs a {
     margin-left: 24px;
@@ -49,7 +47,8 @@ nav .tabs a {
     font-weight: 300;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: #666;
+    color: #1d70b6;
+    font-weight: 600;
 }
 nav .tabs .nav-link {
     padding: 0px;
@@ -82,6 +81,9 @@ nav .tabs .nav-link.active {
     font-size: 48px;
     letter-spacing: 1px;
     text-align: left;
+}
+#home .home-content-container h1 img {
+    display: none;
 }
 #home .home-content-container div p {
     color: #36454f;
@@ -546,5 +548,147 @@ nav .tabs .nav-link.active {
     }
     nav .tabs .nav-link.active {
         color: #deac73;
+    }
+
+    #home {
+        min-height: 430px;
+        padding-top: 60px;
+        display: block;
+    }
+    #home .home-section {
+        width: auto;
+        height: 100%;
+    }
+    #home .image {
+        display: none;
+    }
+    #home .home-content-container {
+        display: block;
+    }
+    #home .home-content-container div {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-around;
+        padding: 12px 24px 12px 24px;
+    }
+    #home .home-content-container div img {
+        display: none;
+    }
+    #home .home-content-container div h1 {
+        display: flex;
+        align-items: center;
+    }
+    #home .home-content-container h1 img {
+        display: block;
+        width: 80px;
+        height: 80px;
+    }
+    #home .home-content-container div p {
+        text-align: justify;
+        font-size: 3.2vmax;
+    }
+    #profile-skills-container{
+        display: block;
+    }
+    #profile-skills-container .profile {
+        width: auto;
+        padding: 12px 24px 12px 24px;
+    }
+    #profile-skills-container .skills {
+        width: auto;
+        padding: 12px 24px 12px 24px;
+        background-color: #efe2d3;
+        color: #212529;
+    }
+    #profile-skills-container .skills .title p {
+        color: #212529;
+    }
+    #profile-skills-container .skills .title i {
+        color: #39a0ff;
+    }
+    #profile-skills-container .skills .skills-content {
+        margin-left: 0px;
+    }
+    #profile-skills-container .skills ul {
+        padding: 0;
+        flex-wrap: wrap;
+    }
+    #profile-skills-container .skills ul li {
+        flex: 1;
+    }
+    #experience {
+        height: auto;
+        padding: 12px 24px 12px 24px;
+        background: #ffffff;
+    }
+    #experience .timeline-container {
+        flex-wrap: wrap;
+    }
+    #experience .timeline-container .card-container {
+        width: 100%;
+        height: auto;
+        margin-bottom: 86px;
+    }
+    #experience .timeline-container .separator {
+        display: none;
+    }
+    #experience .timeline-container .card-container .timeline {
+        font-size: 12px;
+    }
+    #experience .card {
+        background-color: #efe2d3;
+    }
+    #projects {
+        padding: 12px 24px 12px 24px;
+    }
+    #projects .project {
+        margin-bottom: 12px;
+    }
+    #projects .projects-container {
+        justify-content: space-around;
+    }
+
+    #testimonial {
+        padding: 12px 24px 12px 24px;
+    }
+    #testimonial .carousel {
+        height: calc(100% - 170px);
+    }
+    #testimonial .carousel .carousel-item .box{
+        width: 65%
+    }
+    #testimonial .carousel .carousel-item .box::before {
+        display: none;
+    }
+    #testimonial .carousel .carousel-item .box::after {
+        display: none;
+    }
+    #testimonial .carousel .carousel-item .box .fas.fa-quote-left.fa2{
+        display: none
+    }
+    #testimonial .carousel .carousel-item .box .fas.fa-quote-right.fa1{
+        display: none
+    }
+    #contact {
+        padding: 12px 24px 12px 24px;
+    }
+    #contact .contact-icon-container {
+        flex-wrap: wrap;
+        margin: 0;
+        width: auto;
+    }
+    #contact .contact-icon-container .contact-icon{
+        margin-bottom: 12px;
+        text-align: center;
+    }
+    #contact .contact-icon-container .contact-icon img{
+        width:80px;
+    }
+}
+
+@media (max-width: 419px) {
+    #testimonial .carousel .carousel-item .box{
+        width: 100%
     }
 }
