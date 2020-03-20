@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Sincronizacion subtitulos </title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1> Sincronizacion subtitulos </h1>
+        <label for="file">Archivo de subtitulo</label>
+        <input type="file" id="file">
+        <br/><br/>
+        <label for="timeToShift">Tiempo de desfasado (segundos)</label>
+        <input type="number" id="timeToShift"/>
+        <br/><br/>
+        <label for="male">Atrasar</label>
+        <input type="radio" id="retroceder" name="shiftType" value="retroceder">
+        <label for="male">Adelantar</label>
+        <input type="radio" id="adelantar" name="shiftType" value="adelantar">
+        <br/><br/>
+        <button onclick="sync()">Sincronizar</button>
+    </body>
+
+    <script>
+        function downloadString(text, fileType) {
+        var blob = new Blob([text], { type: fileType });
+
+        var a = document.createElement('a');
+        a.download = fileName;
+        a.href = URL.createObjectURL(blob);
+        a.dataset.downloadurl = [a.download, a.href].join(':');
+        a.style.display = "none";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function() { URL.revokeObjectURL(a.href); }, 1500);
+        }
+
+        const msToTime = (duration) => {
+            const date = new Date(duration);
+            let hours = date.getUTCHours(),
+            minutes = date.getUTCMinutes(),
+            seconds = date.getUTCSeconds(),
+            milliseconds = date.getUTCMilliseconds()
+
+            hours = (hours < 10) ? "0" + hours : hours;
+            minutes = (minutes < 10) ? "0" + minutes : minutes;
+            seconds = (seconds < 10) ? "0" + seconds : seconds;
+            if(milliseconds < 10) {
+                milliseconds = "00" + milliseconds;
+            } else if(milliseconds >= 10 && milliseconds < 100) {
+                milliseconds = "0" + milliseconds;
+            }
+
+            return hours + ":" + minutes + ":" + seconds + "," + milliseconds;
+        }
+        const timeToMs = time => {
+            const newTime = time.replace(',',':');
+            let [hour, minutes, seconds, milis] = newTime.split(':');
+            hour= Number(hour);
+            minutes = Number(minutes);
+            seconds = Number(seconds);
+            milis = Number(milis);
+            return milis + seconds * 1000 + minutes * 60 * 1000 + hour * 60 * 60 * 1000;
+        }
+        const addTime = (baseTime) => {
+            console.log(`Tiempo inicial: ${baseTime}`);
+            console.log(`Tiempo a agregar: ${timeToAdd}`);
+            if(!timeToAdd) {
+                return baseTime;
+            }
+
+            const timeInMillis = timeToMs(baseTime);
+            const timeToAddInMillis = Number(timeToAdd) * 1000;
+            console.log(`Tiempo total: ${msToTime(timeInMillis + timeToAddInMillis)}`);
+            return msToTime(timeInMillis + timeToAddInMillis);
+        } 
+        const substractTime = (baseTime) => {
+            console.log(`Tiempo inicial: ${baseTime}`);
+            console.log(`Tiempo a reducir: ${timeToAdd}`);
+            if(!timeToAdd) {
+                return baseTime;
+            }
+
+            const timeInMillis = timeToMs(baseTime);
+            const timeToAddInMillis = Number(timeToAdd) * 1000;
+            console.log(`Tiempo total: ${msToTime(timeInMillis - timeToAddInMillis)}`);
+            return msToTime(timeInMillis - timeToAddInMillis);
+        } 
+        let fileName = '';
+        let fileString = '';
+        let timeToAdd = null;
+        const sync = () => {
+            const regExp = new RegExp('[0-9][0-9]:[0-9][0-9]:[0-9][0-9],[0-9][0-9][0-9]','gm');
+            const allTimes = fileString.match(regExp);
+            let newFileString = fileString;
+            const timeModifier = document.getElementById('retroceder').checked ? addTime : substractTime;
+            for(const time of allTimes) {
+                const newTime = timeModifier(time);
+                newFileString = newFileString.replace(time,newTime);
+            }
+            downloadString(newFileString, 'srt');
+
+        }
+        window.addEventListener('load', function() {
+            const fileInput = document.getElementById("file");
+            fileInput.addEventListener("change", function () {
+            if (this.files && this.files[0]) {
+                var myFile = this.files[0];
+                fileName = myFile.name;
+                var reader = new FileReader();
+                
+                reader.addEventListener('load', function (e) {
+                    fileString = e.target.result;
+                });
+                
+                reader.readAsBinaryString(myFile);
+            }
+            });   
+
+            const timeInput = document.getElementById("timeToShift");
+            timeInput.addEventListener("change", function (event) {
+                timeToAdd = event.target.value;
+            });
+
+        
+        });
+        
+    </script>
+</html>
