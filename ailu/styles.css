@@ -8,8 +8,8 @@
 .iframe-container {
     z-index: 10;
     position: absolute;
-    bottom: 80px;
-    left: 0;
+    bottom: 50px;
+    left: 20px;
     width: 360;
     height: 360;
 }
