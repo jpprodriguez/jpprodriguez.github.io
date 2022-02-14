@@ -1,3 +1,15 @@
-.background-img {
-    width: 100%
+.root {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.iframe-container {
+    z-index: 10;
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    width: 360;
+    height: 360;
 }
