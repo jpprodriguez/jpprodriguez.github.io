@@ -9,7 +9,5 @@
     z-index: 10;
     position: absolute;
     bottom: 50px;
-    left: 20px;
-    width: 360;
-    height: 360;
+    left: calc(50vw - 140px);
 }
